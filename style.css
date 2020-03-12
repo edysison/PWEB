@@ -1,0 +1,60 @@
+/* basic css reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    font-family: sans-serif;
+    border: 2px solid #000;
+    margin:10px;
+    padding: 10px;
+}
+
+header.welcome{
+    padding: 10px 10px;
+    padding-left: 35px;
+    border-bottom: 2px solid #000;
+}
+
+nav{
+    border-bottom: 2px solid #000;
+}
+
+nav a:first-child{
+    padding-left: 25px;
+}
+
+nav a:nth-child(n){
+    display: inline-block;
+    margin: 10px;
+    padding-right:25px;
+    border-right: 2px solid #000;
+}
+
+nav a:last-child{
+    border-right: 0px;
+}
+
+main{
+    margin: 25px 50px;
+}
+
+article{
+    margin: 25px 0px;
+}
+
+article h2{
+    margin: 5px 0px;
+    font-size: 18px;
+}
+
+article h4{
+    font-size: 10px;
+    color:gray;
+}
+
+article div p{
+    margin: 15px 0px;
+}
