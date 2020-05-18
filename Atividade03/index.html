@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade03</title>
+</head>
+<body>
+    <form>
+        <button onclick="Jogar(event,'pedra')">pedra</button>
+        <button onclick="Jogar(event,'papel')">papel</button>
+        <button onclick="Jogar(event,'tesoura')">tesoura</button>
+    </form>
+    <div>
+        Computador: <span id="escolhaAdversario"></span>
+    </div>
+    <span id="resultadoPartida"></span>
+<script>
+    let escolhaAdversario = document.querySelector("#escolhaAdversario")
+    let resultadoPartida = document.querySelector("#resultadoPartida")
+
+    function Jogar(evento, escolha){
+        event.preventDefault()
+        let resultado = "empate"
+        let aleatorio = Math.floor(Math.random() * 3)
+        let lista = ['pedra', 'papel', 'tesoura']
+        if(
+            (escolha == 'pedra' && lista[aleatorio] == 'tesoura') ||
+            (escolha == 'tesoura' && lista[aleatorio] == 'papel') ||
+            (escolha == 'papel' && lista[aleatorio] == 'pedra')
+        ){ resultado = 'ganhou' }
+
+        if(
+            (lista[aleatorio] == 'pedra' && escolha == 'tesoura') ||
+            (lista[aleatorio] == 'tesoura' && escolha == 'papel') ||
+            (lista[aleatorio] == 'papel' && escolha == 'pedra')
+        ){ resultado = 'perdeu' }
+
+        escolhaAdversario.textContent = lista[aleatorio]
+        
+        resultadoPartida.textContent = resultado
+
+        return false
+    }
+</script>
+</body>
+</html>
